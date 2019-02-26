@@ -11,7 +11,7 @@ awesome
 https://semver.org/lang/zh-CN/
 
 #### 搞不懂的写法
-第三课的预习中 https://zhuanlan.zhihu.com/p/26536815 以下两种写法不理解：
+第三课的预习中 https://zhuanlan.zhihu.com/p/26536815 以下两种写法不理 解：
 ```
 foo.call(sTarget, Array.prototype.slice.call(arguments))
 ```
