@@ -15,3 +15,12 @@
 * 富文本编辑器如何解决 XSS 问题 (设置标签白名单) https://jsxss.com/en/index.html
 
 * IndexedDB 使用与出坑指南 https://juejin.im/post/5a9d65916fb9a028e46e257a
+
+* 九种跨域解决方式：https://segmentfault.com/a/1190000011145364#articleHeader0
+  1. JOSNP
+  2. CORS
+  3. iframe
+  4. ngix反向代理
+  5. postMessage
+  6. websocket协议跨域
+ 
