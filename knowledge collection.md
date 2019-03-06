@@ -19,8 +19,14 @@
 * 九种跨域解决方式：https://segmentfault.com/a/1190000011145364#articleHeader0
   1. JOSNP
   2. CORS
-  3. iframe
-  4. ngix反向代理
+  3. iframe（细分三种）
+  4. nginx（细分两种）
   5. postMessage
   6. websocket协议跨域
  
+* OOCSS的概念 https://www.w3cplus.com/css/oocss-concept
+
+* BEM命名规范 https://juejin.im/entry/58e605d80ce46300584a1afb
+
+* 版本号管理 https://semver.org/lang/zh-CN/
+
