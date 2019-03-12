@@ -35,3 +35,7 @@
 
 * 让你对webpck和tapable理解提升一个层次的文章 https://juejin.im/post/5beb8875e51d455e5c4dd83f?from=groupmessage
 
+* call、apply、bind使用和区别 https://juejin.im/post/5a9640335188257a7924d5ef
+
+* 如何理解 JavaScript 中的 this 关键字？ https://www.zhihu.com/question/19636194 (加深认知:[JavaScript 的 this 原理](http://www.ruanyifeng.com/blog/2018/06/javascript-this.html))
+
