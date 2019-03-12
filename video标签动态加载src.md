@@ -1,4 +1,5 @@
 ## video标签动态加载src
+
 ~~~
 <video :controls="true" autoplay playsinline webkit-playsinline>
    <source src="" type="application/x-mpegURL">
