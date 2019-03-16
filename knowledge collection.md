@@ -5,6 +5,8 @@
 * 攻克知识难点，写系列学习笔记
 * 算法/数据结构的书看到二叉树（前三五章）
 * 以后如果觉得没什么好学的就在github里搜 awesome
+* github上star了一个 JavaScript深入系列
+* 《你不知道的JavaScript》
 
 
 ### 知识点收集
