@@ -28,7 +28,7 @@
 
 好了，认证个人Github部署就完成了，基本就是将Azure与Github连通就可以了，不需要太多其他的步骤。不过，因为我司的SSO机制，当将以上步骤应用到部署时是不可行的（会在第二步登录不了）。下面我们来聊聊如何才能认证企业级Github部署：
 
-1. 获取 Deployment Trigger URL 并设置成Github仓库的webhook:
+1. 获取 Deployment Trigger URL 并设置成Github仓库的webhook(当代码有更新时用来通知外部服务):
 
     1. 点击应用All App service settings菜单，在Properties栏下找到Deployment Trigger URL的值，复制下来:
     
@@ -41,3 +41,7 @@
     3. 点击Add webhooks,三个branch添加了三个hooks:
     
     ![](https://github.com/cuantmac/Daily-FE/blob/master/img-folder/2019040811.png)
+
+2. 生成Github access token并应用到部署中心的连接配置中：
+
+    1. 在Github的账号Setting里选择Person access tokens，点击Generate new token，
