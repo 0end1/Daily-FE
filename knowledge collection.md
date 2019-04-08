@@ -41,3 +41,4 @@
 
 * 如何理解 JavaScript 中的 this 关键字？ https://www.zhihu.com/question/19636194 (加深认知:[JavaScript 的 this 原理](http://www.ruanyifeng.com/blog/2018/06/javascript-this.html))
 
+* 前后端分离容易产生的问题及前后端心态总结 https://www.cnblogs.com/hetaojs/p/10616773.html
