@@ -44,4 +44,22 @@
 
 2. 生成Github access token并应用到部署中心的连接配置中：
 
-    1. 在Github的账号Setting里选择Person access tokens，点击Generate new token，
+    1. 在Github的账号Setting里选择Person access tokens，点击Generate new token：
+    
+    ![](https://github.com/cuantmac/Daily-FE/blob/master/img-folder/20190408113.png)
+    
+    2. 添加token的描述，并选择需要的权限，可全部勾选，点击Generate token后生成token，请记录下来：
+    
+    ![](https://github.com/cuantmac/Daily-FE/blob/master/img-folder/20190408114.png)
+    
+    3. 在应用的部署中心选择External，点击继续：
+    
+    ![](https://github.com/cuantmac/Daily-FE/blob/master/img-folder/20190408112.png)
+    
+    4. 代码存储库的连接地址需要添加token认证：
+    
+    ![](https://github.com/cuantmac/Daily-FE/blob/master/img-folder/20190408115.png)
+    
+    5. 填写分支并点击继续，完成部署。
+    
+3. 此时的部署依然会Fail，从Log里可以看出是认证问题，
