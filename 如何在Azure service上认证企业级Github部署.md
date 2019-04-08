@@ -62,4 +62,20 @@
     
     5. 填写分支并点击继续，完成部署。
     
-3. 此时的部署依然会Fail，从Log里可以看出是认证问题，
+3. 此时的部署依然会Fail，从Log里可以看出是认证问题。搜遍Google，在[Continuous Deployment From GitHub Enterprise Repository to Azure Web App](https://nsamteladze.wordpress.com/2015/07/19/continuous-deployment-from-github-enterprise-repository-to-azure-web-app/)文章里提到了如果我们想要Azure从Github拉取代码，还需要添加应用的SSH key作为Deploy key：
+
+    1. Azure应用生成SSH key:
+    
+    ![](https://github.com/cuantmac/Daily-FE/blob/master/img-folder/20190408116.png)
+    
+    将上图中红框中部分替换为 `api/sshkey?ensurePublicKey=1` 则该应用的SSH key即会被展示到网页上：
+     
+    ![](https://github.com/cuantmac/Daily-FE/blob/master/img-folder/20190408117.png)
+    
+    2. 将SSH key应用到Github的Deploy keys项内，三个分支则添加了三个Deploy keys:
+    
+    ![](https://github.com/cuantmac/Daily-FE/blob/master/img-folder/20190408118.png)
+    
+4. 尝试提交代码到Github，此时即可在应用的内部版本里看到我们构建成功的history:
+
+![](https://github.com/cuantmac/Daily-FE/blob/master/img-folder/20190408119.png)
