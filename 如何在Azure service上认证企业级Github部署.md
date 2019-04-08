@@ -26,7 +26,7 @@
 
 ![](https://github.com/cuantmac/Daily-FE/blob/master/img-folder/2019040806.png)
 
-好了，认证个人Github部署就完成了，基本就是将Azure与Github连通就可以了，不需要太多其他的步骤。不过，因为我司的SSO机制，当将以上步骤应用到部署时是不可行的（会在第二步登录不了）。下面我们来聊聊如何才能认证企业级Github部署：
+好了，认证个人Github部署就完成了，基本就是将Azure与Github连通就可以了，不需要太多其他的步骤。不过，因为我司的SSO机制，部使用以上步骤部署是不可行的（会在第二步登录不了）。下面我们来聊聊如何才能认证企业级Github部署：
 
 1. 获取 Deployment Trigger URL 并设置成Github仓库的webhook(当代码有更新时用来通知外部服务):
 
@@ -46,19 +46,19 @@
 
     1. 在Github的账号Setting里选择Person access tokens，点击Generate new token：
     
-    ![](https://github.com/cuantmac/Daily-FE/blob/master/img-folder/20190408113.png)
+    ![](https://github.com/cuantmac/Daily-FE/blob/master/img-folder/2019040813.png)
     
     2. 添加token的描述，并选择需要的权限，可全部勾选，点击Generate token后生成token，请记录下来：
     
-    ![](https://github.com/cuantmac/Daily-FE/blob/master/img-folder/20190408114.png)
+    ![](https://github.com/cuantmac/Daily-FE/blob/master/img-folder/2019040814.png)
     
     3. 在应用的部署中心选择External，点击继续：
     
-    ![](https://github.com/cuantmac/Daily-FE/blob/master/img-folder/20190408112.png)
+    ![](https://github.com/cuantmac/Daily-FE/blob/master/img-folder/2019040812.png)
     
     4. 代码存储库的连接地址需要添加token认证：
     
-    ![](https://github.com/cuantmac/Daily-FE/blob/master/img-folder/20190408115.png)
+    ![](https://github.com/cuantmac/Daily-FE/blob/master/img-folder/2019040815.png)
     
     5. 填写分支并点击继续，完成部署。
     
@@ -66,16 +66,16 @@
 
     1. Azure应用生成SSH key:
     
-    ![](https://github.com/cuantmac/Daily-FE/blob/master/img-folder/20190408116.png)
+    ![](https://github.com/cuantmac/Daily-FE/blob/master/img-folder/2019040816.png)
     
     将上图中红框中部分替换为 `api/sshkey?ensurePublicKey=1` 则该应用的SSH key即会被展示到网页上：
      
-    ![](https://github.com/cuantmac/Daily-FE/blob/master/img-folder/20190408117.png)
+    ![](https://github.com/cuantmac/Daily-FE/blob/master/img-folder/2019040817.png)
     
     2. 将SSH key应用到Github的Deploy keys项内，三个分支则添加了三个Deploy keys:
     
-    ![](https://github.com/cuantmac/Daily-FE/blob/master/img-folder/20190408118.png)
+    ![](https://github.com/cuantmac/Daily-FE/blob/master/img-folder/2019040818.png)
     
 4. 尝试提交代码到Github，此时即可在应用的内部版本里看到我们构建成功的history:
 
-![](https://github.com/cuantmac/Daily-FE/blob/master/img-folder/20190408119.png)
+![](https://github.com/cuantmac/Daily-FE/blob/master/img-folder/2019040819.png)
