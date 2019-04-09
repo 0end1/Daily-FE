@@ -42,3 +42,8 @@
 * 如何理解 JavaScript 中的 this 关键字？ https://www.zhihu.com/question/19636194 (加深认知:[JavaScript 的 this 原理](http://www.ruanyifeng.com/blog/2018/06/javascript-this.html))
 
 * 前后端分离容易产生的问题及前后端心态总结 https://www.cnblogs.com/hetaojs/p/10616773.html
+
+* Key值在列表渲染中的作用：https://mp.weixin.qq.com/s?__biz=MjM5MTA1MjAxMQ==&mid=2651231974&idx=1&sn=ec6a9af65dc1804f281a4e7d1bde945a&chksm=bd494f628a3ec6749add615ff10a3e28ce39eb778b64120a3deb45166c91b71220582c1f82de&scene=0&xtrack=1&key=81c8654a52f48fc2a54c11772533098db17ddac6a10fb410930c49385893d3da1e1c16abbc4106c8933a956125d47f93b1081487dce3eda463ffb0916c4b6c1e13a0317116926a5e3bb59fd0cd6108f5&ascene=1&uin=MTgyNDg2NTU0Mg%3D%3D&devicetype=Windows+10&version=62060739&lang=en&pass_ticket=5bkc3i68mKG9%2FcoVpkvguzJz8o6wz9m9YF94tDA6Hcf9vcZYLDC%2BZVYmha9FhPqJ
+    * 不加Key值，在数组的末尾追加元素，之前已经渲染的元素不会重新渲染。但如果在头部或者中间插入元素，整个List被删除重新渲染。
+    * 添加Key值，在数组末尾、头部或者中间位置插入元素，其他已经渲染的元素都不会被重新渲染。
+    
