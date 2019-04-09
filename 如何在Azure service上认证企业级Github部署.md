@@ -22,7 +22,7 @@
 
 ![](https://github.com/cuantmac/Daily-FE/blob/master/img-folder/2019040805.png)
 
-6. 部署成功后，相关信息将被展示，且每被触发一次将对多一条部署记录：
+6. 部署成功后，相关信息将被展示，且每被触发一次将会多一条部署记录：
 
 ![](https://github.com/cuantmac/Daily-FE/blob/master/img-folder/2019040806.png)
 
