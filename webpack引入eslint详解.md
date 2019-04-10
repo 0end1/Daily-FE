@@ -83,7 +83,7 @@ extends: 'eslint:recommended',
 extends: 'eslint:all',
 ```
 
-了解详情可以参考一下[官方规则表](https://dxcportal.sharepoint.com/sites/frontdoor/Development/SitePages/NewSingleServiceForm.aspx?ServiceID=137)
+了解详情可以参考一下[官方规则表](http://eslint.cn/docs/rules/)
 
 #### 第三方分享
 
