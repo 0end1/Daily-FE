@@ -2,4 +2,4 @@
 
 在前端开发过程中，我们经常会遇到需要发送异步请求的情况。而使用一个功能齐全，接口完善的HTTP请求库，能够在很大程度上减少我们的开发成本，提高我们的开发效率。
 
-axios是一个近年来非常火的一个HTTP请求库，目前在(GitHub)[https://github.com/axios/axios] 
+axios是一个近年来非常火的一个HTTP请求库，目前在 [GitHub](https://github.com/axios/axios)
