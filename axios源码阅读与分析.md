@@ -59,7 +59,7 @@ axios是一个近年来非常火的一个HTTP请求库，目前在 [GitHub](http
  
 ## axios的核心模块是如何设计与实现的
 
-!()[https://github.com/cuantmac/Daily-FE/blob/master/img-folder/2019041801.png]
+![](https://github.com/cuantmac/Daily-FE/blob/master/img-folder/2019041801.png)
 
 ### HTTP请求模块
 
