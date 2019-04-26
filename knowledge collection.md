@@ -7,6 +7,8 @@
 * 以后如果觉得没什么好学的就在github里搜 awesome
 * github上star了一个 JavaScript深入系列
 * 《你不知道的JavaScript》
+* 曾探《JvaScript设计模式与开发实践》（已购）
+* 刷题素材：https://juejin.im/post/5cb87f9df265da03555c78ec
 
 
 ### 知识点收集
@@ -39,7 +41,7 @@
 
 * call、apply、bind使用和区别 https://juejin.im/post/5a9640335188257a7924d5ef
 
-* 如何理解 JavaScript 中的 this 关键字？ https://www.zhihu.com/question/19636194 (加深认知:[JavaScript 的 this 原理](http://www.ruanyifeng.com/blog/2018/06/javascript-this.html))
+* 如何理解 JavaScript 中的 this 关键字？ https://www.zhihu.com/question/19636194 (加深认知:[JavaScript的this原理](http://www.ruanyifeng.com/blog/2018/06/javascript-this.html))
 
 * 前后端分离容易产生的问题及前后端心态总结 https://www.cnblogs.com/hetaojs/p/10616773.html
 
@@ -47,3 +49,6 @@
     * 不加Key值，在数组的末尾追加元素，之前已经渲染的元素不会重新渲染。但如果在头部或者中间插入元素，整个List被删除重新渲染。
     * 添加Key值，在数组末尾、头部或者中间位置插入元素，其他已经渲染的元素都不会被重新渲染。
     
+* 为什么要对图片进行base64编码：https://www.zhangxinxu.com/wordpress/2012/04/base64-url-image-%E5%9B%BE%E7%89%87-%E9%A1%B5%E9%9D%A2%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/   
+
+* 单例模式：https://segmentfault.com/a/1190000012842251
