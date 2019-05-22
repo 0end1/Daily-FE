@@ -217,7 +217,7 @@ history.replaceState方法的参数与pushState方法一模一样，区别是它
 
 popstate事件，每当同一个文档的浏览历史(即history对象)出现变化时，就会触发popstate事件。需要注意的是，仅仅调用pushState或replaceState方法是不会触发该事件的。只有用户点击浏览器的前级或者回退按钮，或者使用js调用back,forward,go方法时才会触发。另外，该事件只针对同一个文档，如果浏览历史的切换导致加载不同的文档，该事件也不会触发
 
-以上API介绍摘自[history对象]（https://javascript.ruanyifeng.com/bom/history.html#toc0），可点击查看完整版。
+以上API介绍摘自[history对象](https://javascript.ruanyifeng.com/bom/history.html#toc0)。
 
 #### 3.2新标准下路由的实现
 

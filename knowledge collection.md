@@ -52,3 +52,10 @@
 * 为什么要对图片进行base64编码：https://www.zhangxinxu.com/wordpress/2012/04/base64-url-image-%E5%9B%BE%E7%89%87-%E9%A1%B5%E9%9D%A2%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/   
 
 * 单例模式：https://segmentfault.com/a/1190000012842251
+
+* 此处的0，在Node中约为1ms，在浏览器中约为4ms
+~~~
+setTimeout(() => {},0)
+~~~
+
+* Vuex、Flux、Redux、Redux-saga、Dva、MobX https://juejin.im/post/5c18de8ef265da616413f332#heading-23(看的心累)
