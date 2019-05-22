@@ -243,5 +243,6 @@ function __webpack_require__(moduleId) {
 
 好了，我们用流程图总结下Webpack模块的加载思路：
 
+![](https://github.com/cuantmac/Daily-FE/blob/master/img-folder/webpack%20sync.png)
 
 ### 异步加载
