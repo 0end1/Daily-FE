@@ -484,4 +484,116 @@ __webpack_require__.e = function requireEnsure(chunkId) {
 
 我们发现了：
 
- 1. 久违的
+ 1. 久违的 ./src/utils/math.js模块
+ 2. window["webpackJsonp"]数组的使用地点
+ 
+这段代码开始执行，把异步加载相关的`chunk id`与模块传给`push`函数。而前面已经提到过，`window["webpackJsonp"]`数组的push函数一杯重写为`webpackJsonpCallback`函数，它的定义位置在`webpackBootstrap`中：
+
+~~~
+function webpackJsonpCallback(data) {
+  var chunkIds = data[0];
+  var moreModules = data[1];
+
+  // then flag all "chunkIds" as loaded and fire callback
+  var moduleId, chunkId, i = 0, resolves = [];
+
+  // 将 chunk 标记为已加载
+  for(;i < chunkIds.length; i++) {
+    chunkId = chunkIds[i];
+    if(installedChunks[chunkId]) {
+      resolves.push(installedChunks[chunkId][0]);
+    }
+    installedChunks[chunkId] = 0;
+  }
+
+  // 把 "moreModules" 加到 webpackBootstrap 中的 modules 闭包变量中。
+  for(moduleId in moreModules) {
+    if(Object.prototype.hasOwnProperty.call(moreModules, moduleId)) {
+      modules[moduleId] = moreModules[moduleId];
+    }
+  }
+
+  // parentJsonpFunction 是 window["webpackJsonp"] 的原生 push
+  // 将 data 加入全局数组，缓存 chunk 内容
+  if(parentJsonpFunction) parentJsonpFunction(data);
+
+  // 执行 resolve 后，加载 chunk 的 promise 状态变为 resolved，then 内的函数开始执行。
+  while(resolves.length) {
+    resolves.shift()();
+  }
+
+};
+~~~
+ 
+走进这个函数中，意味着异步加载的chunk内容已经拿到，这个时候我们要完成两件事，一是让依赖这次异步加载结果的模块继续执行，二是缓存结果。
+
+关于第一点，我们回忆一下之前`__webpack_require__.e`的内容，此时`chunk`还处于加载中状态，也就是说对应的`installedChunks[chunkId]`的值此时为`[resolve, reject, promise]`。而这里，chunk已经加载，但`promise`还未决议，于是`webpackJsonpCallback`内部定义了一个`resolves`变量来收集`installedChunks`上的`resolve`并执行它。
+
+接下来说到第二点，就要涉及到几个层面的缓存了。
+
+首先是chunk层面，这里有两个相关操作，操作一将`installedChunks[chunkId]`置为0可以让`__webpack_require__.e`在第二次加载同一chunk时返回一个立即决议的`promise（Promise.all([])）`;操作二将`chunk data`添加进`window["webpackJsonp"]`数组，可以在多入口模式时，方便的拿到已加载过的`chunk`缓存。通过以下代码实现：
+
+~~~
+/*** 缓存执行部分 ***/
+var jsonpArray = window["webpackJsonp"] = window["webpackJsonp"] || [];
+// ...
+for (var i = 0; i < jsonpArray.length; i++) webpackJsonpCallback(jsonpArray[i]);
+var parentJsonpFunction = oldJsonpFunction;
+/*** 缓存执行部分 ***/
+
+/*** 缓存添加部分 ***/
+function webpackJsonpCallback(data) {
+  //...
+    // 此处的 parentJsonpFunction 是 window["webpackJsonp"] 数组的原生 push
+    if (parentJsonpFunction) parentJsonpFunction(data);
+  //...
+}
+/*** 缓存添加部分 ***/
+~~~
+ 
+而在modules层面，`chunk`中的`moreModules`被合入入口文件的`modules`中，可供下一个微任务中的`__webpack_require__ `同步加载模块。
+
+~~~
+
+({
+
+  "./src/index.js":
+    (function (module, exports, __webpack_require__) {
+      console.log('Hello webpack!');
+      window.setTimeout(() => {
+        __webpack_require__.e(0).then(__webpack_require__.bind(null, "./src/utils/math.js")).then(mathUtil => {
+          console.log('1 + 2: ' + mathUtil.plus(1, 2));
+        });
+      }, 2000);
+    })
+});
+~~~
+
+`__webpack_require__.e(0)`返回的promise决议后,`__webpack_require__.bind(null, "./src/utils/math.js")`可以加载到`chunk`携带的模块，并返回模块做为下一个为任务函数的入参，接下来就是`Webpack Loader`翻译过的其他业务代码了。
+
+现在我们吧异步流程梳理一下：
+
+![](https://github.com/cuantmac/Daily-FE/blob/master/img-folder/webpack%20async.jpg)
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
