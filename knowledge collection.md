@@ -9,6 +9,7 @@
 * 《你不知道的JavaScript》
 * 曾探《JvaScript设计模式与开发实践》（已购）
 * 刷题素材：https://juejin.im/post/5cb87f9df265da03555c78ec
+* vue组件间通信六种方式（完整版
 
 
 ### 知识点收集
