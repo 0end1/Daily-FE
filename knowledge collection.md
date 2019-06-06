@@ -9,7 +9,7 @@
 * 《你不知道的JavaScript》
 * 曾探《JvaScript设计模式与开发实践》（已购）
 * 刷题素材：https://juejin.im/post/5cb87f9df265da03555c78ec
-* vue组件间通信六种方式（完整版
+* 拆解 JavaScript 中的异步模式：https://mp.weixin.qq.com/s?__biz=MjM5MTA1MjAxMQ==&mid=2651232427&idx=1&sn=84691cca63745d36ac97b959a6fd696c&chksm=bd49412f8a3ec8398eaf2cf7eb43d5ab7ac8a98528d93a4e4a9a81f4763449c656533b0df46b&scene=0&xtrack=1&key=729816feb00e845f263602d67c5b1e8fc53208b485837e617d58d9c945e4e08286b8a15c592f4a85980d466c046f78d56740f9924014a884830b970d14cd2f7ebce48ec78d793f9f57ef8a5dbc72b505&ascene=1&uin=MTgyNDg2NTU0Mg%3D%3D&devicetype=Windows+10&version=62060825&lang=en&pass_ticket=q9QFAxZZRcNfQ8BTDptfRQXqj4Ad3N9YH3S8h0RhVQitTBmzg2Peizqeorw%2FzwVI
 
 
 ### 知识点收集
@@ -55,8 +55,15 @@
 * 单例模式：https://segmentfault.com/a/1190000012842251
 
 * 此处的0，在Node中约为1ms，在浏览器中约为4ms
+
 ~~~
 setTimeout(() => {},0)
 ~~~
 
 * Vuex、Flux、Redux、Redux-saga、Dva、MobX https://juejin.im/post/5c18de8ef265da616413f332#heading-23(看的心累)
+
+* vue组件间通信六种方式（完整版）
+
+* 重绘与重排 https://juejin.im/post/5c15f797f265da61141c7f86#heading-12
+
+* GZIP原理 https://juejin.im/post/5b793126f265da43351d5125#heading-3
