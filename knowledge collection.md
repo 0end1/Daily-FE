@@ -70,3 +70,5 @@ setTimeout(() => {},0)
 * GZIP原理 https://juejin.im/post/5b793126f265da43351d5125#heading-3
 
 * 一些比较基础的JS基础测试题目 https://github.com/lydiahallie/javascript-questions/blob/master/README-zh_CN.md
+
+* dependency与devDependency的区别（非常规理解，且网上大部分文章的理解都是错误的）https://segmentfault.com/a/1190000008398819
